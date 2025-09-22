@@ -13,7 +13,7 @@ export default function Profile() {
             setError('Please enter a username.');
             return;
         }
-        const res = await fetch(`https://lichess.org/api/user/${username}`);
+        const res = await fetch(`/api/user?username=${username}`);
         if (res.ok) setProfile(await res.json());
         else setError('User not found.');
     }
